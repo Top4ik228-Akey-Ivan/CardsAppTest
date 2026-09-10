@@ -5,21 +5,49 @@ import {
   Route,
   Routes,
 } from 'react-router-dom';
-import HomePage from '../../pages/HomePage';
-import LoginPage from '../../pages/LoginPage';
-import CardsPage from '../../pages/CardsPage';
-import ProfilePage from '../../pages/ProfilePage';
+import PublicRoute from '../Routes/PublicRoute';
+import LoginPage from '../../pages/LoginPage/LoginPage';
+import PrivateRoute from '../Routes/PrivateRoute';
+import HomePage from '../../pages/HomePage/HomePage';
+import CardsPage from '../../pages/CardsPage/CardsPage';
+import ProfilePage from '../../pages/ProfilePage/ProfilePage';
+
+
 
 const AppRouter: React.FC = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/login" element={<LoginPage />} />
-        <Route path="/cards" element={<CardsPage />} />
-        <Route path="/profile" element={<ProfilePage />} />
+        {/* Публичные маршруты */}
+        <Route element={<PublicRoute />}>
+          <Route
+            path="/login"
+            element={<LoginPage />}
+          />
+        </Route>
 
-        <Route path="*" element={<Navigate to="/" replace />} />
+        {/* Приватные маршруты */}
+        <Route element={<PrivateRoute />}>
+          <Route
+            path="/"
+            element={<HomePage />}
+          />
+
+          <Route
+            path="/cards"
+            element={<CardsPage />}
+          />
+
+          <Route
+            path="/profile"
+            element={<ProfilePage />}
+          />
+        </Route>
+
+        <Route
+          path="*"
+          element={<Navigate to="/" replace />}
+        />
       </Routes>
     </BrowserRouter>
   );

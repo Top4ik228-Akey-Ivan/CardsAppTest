@@ -1,4 +1,4 @@
-import Page from "../components/Page/Page";
+import Page from "../../components/Page/Page";
 
 const ProfilePage: React.FC = () => {
     return (
