@@ -1,10 +1,13 @@
-function App() {
+import React from 'react';
+import { Layout } from 'antd';
+import AppRouter from './components/AppRouter/AppRouter';
 
+const App: React.FC = () => {
   return (
-    <div>
-      penis
-    </div>
-  )
-}
+    <Layout className="app-layout">
+        <AppRouter />
+    </Layout>
+  );
+};
 
-export default App
+export default App;

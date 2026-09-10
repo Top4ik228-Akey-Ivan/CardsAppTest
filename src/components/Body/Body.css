@@ -1,0 +1,20 @@
+.app-body {
+  flex: 1;
+  width: 100%;
+  background: #f5f7fa;
+}
+
+.body-container {
+  width: 100%;
+  max-width: 1200px;
+  min-height: 100%;
+  margin: 0 auto;
+  padding: 40px 32px;
+  box-sizing: border-box;
+}
+
+@media (max-width: 600px) {
+  .body-container {
+    padding: 24px 16px;
+  }
+}   
