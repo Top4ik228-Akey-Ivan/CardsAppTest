@@ -1,19 +1,28 @@
 import React from 'react';
 import { Avatar, Layout } from 'antd';
 import { UserOutlined } from '@ant-design/icons';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
+
+import { useAppDispatch } from '../../store/hooks';
+import { logout } from '../../store/slices/authSlice';
 
 import './Header.css';
 
 const { Header: AntHeader } = Layout;
 
-export interface HeaderProps {
+interface HeaderProps {
   username?: string;
 }
 
-const Header: React.FC<HeaderProps> = ({
-  username = 'Guest',
-}) => {
+const Header: React.FC<HeaderProps> = ({ username }) => {
+  const navigate = useNavigate();
+  const dispatch = useAppDispatch();
+
+  const handleLogout = () => {
+    dispatch(logout());
+    navigate('/login');
+  };
+
   return (
     <AntHeader className="app-header">
       <div className="header-content">
@@ -54,18 +63,9 @@ const Header: React.FC<HeaderProps> = ({
           >
             Профиль
           </NavLink>
-
-          <NavLink
-            to="/login"
-            className={({ isActive }) =>
-              `header-link ${isActive ? 'active' : ''}`
-            }
-          >
-            Войти
-          </NavLink>
         </nav>
 
-        <NavLink to="/profile" className="header-profile">
+        <div className="header-profile">
           <span className="header-username">
             {username}
           </span>
@@ -74,7 +74,14 @@ const Header: React.FC<HeaderProps> = ({
             size={36}
             icon={<UserOutlined />}
           />
-        </NavLink>
+
+          <button
+            className="header-logout"
+            onClick={handleLogout}
+          >
+            Выйти
+          </button>
+        </div>
       </div>
     </AntHeader>
   );

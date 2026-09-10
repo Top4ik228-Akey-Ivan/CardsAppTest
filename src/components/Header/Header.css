@@ -104,3 +104,32 @@
     font-size: 13px;
   }
 }
+
+.header-user-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.header-logout {
+  padding: 0;
+
+  border: none;
+  background: transparent;
+
+  color: #8c8c8c;
+  font-weight: bold;
+  font-size: 13px;
+
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.header-logout:hover {
+  color: #ff4d4f;
+}
+
+.header-username,
+.header-logout {
+  line-height: 1.4;
+}
