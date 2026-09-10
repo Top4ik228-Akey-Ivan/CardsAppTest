@@ -5,10 +5,11 @@ import {
   Route,
   Routes,
 } from 'react-router-dom';
-import HomePage from '../../pages/HomePage';
-import LoginPage from '../../pages/LoginPage';
-import CardsPage from '../../pages/CardsPage';
-import ProfilePage from '../../pages/ProfilePage';
+
+import LoginPage from '../../pages/LoginPage/LoginPage';
+import ProfilePage from '../../pages/ProfilePage/ProfilePage';
+import HomePage from '../../pages/HomePage/HomePage';
+import CardsPage from '../../pages/CardsPage/CardsPage';
 
 const AppRouter: React.FC = () => {
   return (
