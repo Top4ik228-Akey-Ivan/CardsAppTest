@@ -15,12 +15,5 @@ export const store = configureStore({
     getDefaultMiddleware().concat(cardsApi.middleware),
 });
 
-store.subscribe(() => {
-  console.log(
-    'Redux profile state:',
-    store.getState().profile,
-  );
-});
-
 export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;

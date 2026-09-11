@@ -11,7 +11,6 @@ import {
   LockOutlined,
   UserOutlined,
 } from '@ant-design/icons';
-import { useNavigate } from 'react-router-dom';
 
 import { useAppDispatch } from '../../store/hooks';
 import { login } from '../../store/slices/authSlice';
@@ -26,7 +25,6 @@ interface LoginFormValues {
 }
 
 const LoginPage: React.FC = () => {
-  const navigate = useNavigate();
   const dispatch = useAppDispatch();
 
   const [error, setError] = useState('');
@@ -52,8 +50,6 @@ const LoginPage: React.FC = () => {
           username: 'admin',
         }),
       );
-
-      navigate('/', { replace: true });
     } else {
       setError(
         'Неправильный логин или пароль.',
