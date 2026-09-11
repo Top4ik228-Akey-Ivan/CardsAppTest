@@ -1,0 +1,143 @@
+.home-page {
+  padding: 20px 0;
+}
+
+.home-hero {
+  overflow: hidden;
+  border: none;
+  border-radius: 16px;
+  background: #ffffff;
+}
+
+.home-hero .ant-card-body {
+  min-height: 480px;
+  padding: 64px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+.home-content {
+  max-width: 620px;
+}
+
+.home-label {
+  color: #1677ff;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+}
+
+.home-title {
+  margin: 16px 0 20px !important;
+  font-size: 44px !important;
+  line-height: 1.15 !important;
+}
+
+.home-title span {
+  color: #1677ff;
+}
+
+.home-description {
+  max-width: 540px;
+  margin-bottom: 32px !important;
+
+  color: #8c8c8c;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.home-visual {
+  position: relative;
+
+  width: 280px;
+  height: 280px;
+
+  flex-shrink: 0;
+}
+
+.home-word-card {
+  position: absolute;
+
+  width: 200px;
+  height: 240px;
+  padding: 24px;
+
+  box-sizing: border-box;
+  border-radius: 14px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+.home-word-card-back {
+  top: 10px;
+  right: 0;
+
+  background: #e6f4ff;
+
+  transform: rotate(8deg);
+}
+
+.home-word-card-front {
+  left: 0;
+  bottom: 0;
+
+  background: #ffffff;
+
+  transform: rotate(-5deg);
+}
+
+.home-book-icon {
+  margin-bottom: 12px;
+  font-size: 40px;
+  color: #1677ff;
+}
+
+.home-word-card-front h3 {
+  margin: 0 0 4px;
+}
+
+.home-check-icon {
+  margin-top: 20px;
+  color: #52c41a;
+  font-size: 20px;
+}
+
+@media (max-width: 800px) {
+  .home-hero .ant-card-body {
+    min-height: auto;
+    padding: 40px 28px;
+
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .home-title {
+    font-size: 36px !important;
+  }
+
+  .home-visual {
+    align-self: center;
+  }
+}
+
+@media (max-width: 500px) {
+  .home-hero .ant-card-body {
+    padding: 32px 20px;
+  }
+
+  .home-title {
+    font-size: 30px !important;
+  }
+
+  .home-description {
+    font-size: 14px;
+  }
+}

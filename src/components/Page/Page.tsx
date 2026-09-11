@@ -6,6 +6,8 @@ import Footer from '../Footer/Footer';
 import Body from '../Body/Body';
 import { useAppSelector } from '../../store/hooks';
 
+import './Page.css';
+
 export interface PageProps {
   children: React.ReactNode;
 }
