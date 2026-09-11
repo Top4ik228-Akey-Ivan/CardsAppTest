@@ -18,6 +18,12 @@ const AppRouter: React.FC = () => {
   return (
     <BrowserRouter>
       <Routes>
+        {/* Доступно всем, вне зависимости от авторизации */}
+        <Route
+          path="/"
+          element={<HomePage />}
+        />
+
         {/* Публичные маршруты */}
         <Route element={<PublicRoute />}>
           <Route
@@ -28,11 +34,6 @@ const AppRouter: React.FC = () => {
 
         {/* Приватные маршруты */}
         <Route element={<PrivateRoute />}>
-          <Route
-            path="/"
-            element={<HomePage />}
-          />
-
           <Route
             path="/cards"
             element={<CardsPage />}

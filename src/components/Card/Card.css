@@ -1,7 +1,6 @@
 .word-card {
     height: 300px;
     perspective: 1000px;
-    cursor: pointer;
 }
 
 .word-card-inner {
@@ -58,8 +57,6 @@
     margin: 16px 0;
 }
 
-.word-card-hint {
+.word-card-action {
     margin-top: auto;
-    color: #bfbfbf;
-    font-size: 12px;
 }

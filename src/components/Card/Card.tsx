@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Card as AntCard, Typography } from 'antd';
+import { Button, Card as AntCard, Typography } from 'antd';
 
 import type { Card as CardData } from '../../api/cardsApi';
 
@@ -16,15 +16,15 @@ const Card: React.FC<CardProps> = ({ card }) => {
   const [isFlipped, setIsFlipped] = useState(false);
   const [title] = useState(getRandomTitle);
 
-  const handleFlip = () => {
+  const handleFlip = (
+    event: React.MouseEvent<HTMLElement>,
+  ) => {
+    event.stopPropagation();
     setIsFlipped((previous) => !previous);
   };
 
   return (
-    <div
-      className={`word-card ${isFlipped ? 'flipped' : ''}`}
-      onClick={handleFlip}
-    >
+    <div className={`word-card ${isFlipped ? 'flipped' : ''}`}>
       <div className="word-card-inner">
         <AntCard className="word-card-face word-card-front">
           <Text type="secondary">{title}</Text>
@@ -35,9 +35,13 @@ const Card: React.FC<CardProps> = ({ card }) => {
             {card.example}
           </Paragraph>
 
-          <Text className="word-card-hint">
-            Нажмите, чтобы увидеть перевод
-          </Text>
+          <Button
+            type="primary"
+            className="word-card-action"
+            onClick={handleFlip}
+          >
+            LEARN MORE
+          </Button>
         </AntCard>
 
         <AntCard className="word-card-face word-card-back">
@@ -45,9 +49,12 @@ const Card: React.FC<CardProps> = ({ card }) => {
 
           <Title level={3}>{card.translation}</Title>
 
-          <Text className="word-card-hint">
-            Нажмите, чтобы вернуться
-          </Text>
+          <Button
+            className="word-card-action"
+            onClick={handleFlip}
+          >
+            НАЗАД
+          </Button>
         </AntCard>
       </div>
     </div>
