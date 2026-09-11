@@ -41,7 +41,7 @@ const HomePage: React.FC = () => {
               type="primary"
               size="large"
               icon={<BookOutlined />}
-              iconPosition="start"
+              iconPlacement="start"
               onClick={() => navigate('/cards')}
             >
               Перейти к карточкам
