@@ -4,29 +4,13 @@ import { Card as AntCard, Typography } from 'antd';
 import type { Card as CardData } from '../../api/cardsApi';
 
 import './Card.css';
+import { getRandomTitle } from '../../utils/randomTitle';
 
 const { Title, Text, Paragraph } = Typography;
 
 interface CardProps {
   card: CardData;
 }
-
-const CARD_TITLES = [
-  'Word of the Day',
-  'Expand Your Vocabulary',
-  'Learn Something New',
-  'Your New Word',
-  'English Discovery',
-  'Boost Your Vocabulary',
-];
-
-const getRandomTitle = () => {
-  const randomIndex = Math.floor(
-    Math.random() * CARD_TITLES.length,
-  );
-
-  return CARD_TITLES[randomIndex];
-};
 
 const Card: React.FC<CardProps> = ({ card }) => {
   const [isFlipped, setIsFlipped] = useState(false);
