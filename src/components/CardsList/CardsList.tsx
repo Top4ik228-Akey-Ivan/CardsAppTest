@@ -2,7 +2,7 @@ import React from 'react';
 import { Col, Empty, Row, Spin } from 'antd';
 
 import Card from '../Card/Card';
-import type { Card as CardData } from '../../api/cardsApi';
+import type { Card as CardData } from '../../types/card';
 
 interface CardListProps {
   cards: CardData[];

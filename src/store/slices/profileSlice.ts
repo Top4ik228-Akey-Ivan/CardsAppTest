@@ -39,7 +39,7 @@ const profileSlice = createSlice({
       state: ProfileState,
       action: PayloadAction<ProfileState>,
     ) => {
-      Object.assign(state, action.payload),
+      Object.assign(state, action.payload);
       saveProfileToStorage(state);
     },
   },
