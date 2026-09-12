@@ -1,12 +1,6 @@
 import { createApi } from '@reduxjs/toolkit/query/react';
 import { localMockBaseQuery } from '../utils/mockCards';
-
-export interface Card {
-  id: number;
-  word: string;
-  translation: string;
-  example: string;
-}
+import type { Card } from '../types/card';
 
 export const cardsApi = createApi({
   reducerPath: 'cardsApi',

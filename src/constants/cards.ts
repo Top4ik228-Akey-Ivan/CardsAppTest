@@ -1,5 +1,4 @@
-import type { Card } from "../api/cardsApi";
-
+import type { Card } from "../types/card";
 
 export const MOCK_CARDS: Card[] = [
     {

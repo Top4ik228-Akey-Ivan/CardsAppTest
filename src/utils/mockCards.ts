@@ -1,6 +1,6 @@
 import type { BaseQueryFn } from "@reduxjs/toolkit/query";
-import type { Card } from "../api/cardsApi";
 import { MOCK_CARDS } from "../constants/cards";
+import type { Card } from "../types/card";
 
 export const localMockBaseQuery: BaseQueryFn<string, Card[], unknown> = async (
   arg,

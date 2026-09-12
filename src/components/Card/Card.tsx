@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Button, Card as AntCard, Typography } from 'antd';
 
-import type { Card as CardData } from '../../api/cardsApi';
+import type { Card as CardData } from '../../types/card';
 
 import './Card.css';
 import { getRandomTitle } from '../../utils/randomTitle';
