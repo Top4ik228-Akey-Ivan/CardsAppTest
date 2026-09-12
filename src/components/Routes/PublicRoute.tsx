@@ -24,7 +24,7 @@ const PublicRoute: React.FC = () => {
 
     return (
       <Navigate
-        to={state?.from || '/home'}
+        to={state?.from || '/'}
         replace
       />
     );
