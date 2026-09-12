@@ -16,7 +16,7 @@ import ProfilePage from '../../pages/ProfilePage/ProfilePage';
 
 const AppRouter: React.FC = () => {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
       <Routes>
         {/* Доступно всем, вне зависимости от авторизации */}
         <Route
